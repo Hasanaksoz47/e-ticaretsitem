@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ücretsiz Hizmet Kazanın | Yusuf Aras</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f9f9f9;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      width: 70%;
+      margin-bottom: 15px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #28a745;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ücretsiz Hizmet Kazan</h1>
+    <p>Lütfen promo kodunuzu girin:</p>
+    <input type="text" id="promoCodeInput" placeholder="Promo Kodunu Girin">
+    <button onclick="checkPromoCode()">Kontrol Et</button>
+    <div id="result" class="result"></div>
+    <p id="screenshotNotice" style="margin-top: 10px; color: blue; font-size: 14px; display: none;">Lütfen ekran görüntüsünü alıp bizimle paylaşın.</p>
+  </div>
+
+  <script>
+    const validPromoCode = "471801";
+    const services = [
+      "TikTok ücretsiz beğeni", 
+      "Instagram ücretsiz takipçi", 
+      "Facebook ücretsiz beğeni", 
+      "LinkedIn ücretsiz bağlantı", 
+      "YouTube ücretsiz izlenme", 
+      "Twitter ücretsiz retweet", 
+      "Spotify ücretsiz dinlenme"
+    ];
+
+    function checkPromoCode() {
+      const input = document.getElementById("promoCodeInput").value.trim();
+      const resultDiv = document.getElementById("result");
+      const screenshotNotice = document.getElementById("screenshotNotice");
+
+      if (localStorage.getItem("hasWon") === "true") {
+        resultDiv.textContent = "Üzgünüz, bu sayfaya tekrar erişemezsiniz. Daha önce ücretsiz hizmet kazandınız.";
+        resultDiv.style.color = "red";
+        return;
+      }
+
+      if (input === validPromoCode) {
+        const randomService = services[Math.floor(Math.random() * services.length)];
+        resultDiv.textContent = `Tebrikler! ${randomService} kazandınız!`;
+        resultDiv.style.color = "green";
+        screenshotNotice.style.display = "block";
+        localStorage.setItem("hasWon", "true");
+      } else {
+        resultDiv.textContent = "Üzgünüz, geçersiz promo kodu.";
+        resultDiv.style.color = "red";
+        screenshotNotice.style.display = "none";
+      }
+    }
+
+    // Ekran görüntüsü alındığında kullanıcıya mesaj göstermek
+    window.addEventListener("keydown", function (event) {
+      if ((event.key === "PrintScreen") || (event.ctrlKey && event.key === "p")) {
+        alert("Ekran görüntüsü alındı! Lütfen bu görüntüyü bizimle paylaşarak ücretsiz hizmetinizi talep edin.");
+      }
+    });
+  </script>
+</body>
+</html>
