@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Euclid';
+    src: url(../fonts/EuclidCircularBLight.eot);
+    src: url(../fonts/EuclidCircularBLightd41d.eot?#iefix) format('embedded-opentype'), url(../fonts/EuclidCircularBLight.otf) format('otf'), url(../fonts/EuclidCircularBLight.ttf) format('truetype'), url(../fonts/EuclidCircularBLight.woff) format('woff'), url(../fonts/EuclidCircularBLight.woff2) format('woff2');
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid';
+    src: url(../fonts/EuclidCircularBRegular.eot);
+    src: url(../fonts/EuclidCircularBRegulard41d.eot?#iefix) format('embedded-opentype'), url(../fonts/EuclidCircularBRegular.otf) format('otf'), url(../fonts/EuclidCircularBRegular.woff) format('woff'), url(../fonts/EuclidCircularBRegular.ttf) format('truetype'), url(../fonts/EuclidCircularBRegular.woff2) format('woff2');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid';
+    src: url(../fonts/EuclidCircularBMedium.eot);
+    src: url(../fonts/EuclidCircularBMediumd41d.eot?#iefix) format('embedded-opentype'), url(../fonts/EuclidCircularBMedium.otf) format('otf'), url(../fonts/EuclidCircularBMedium.ttf) format('truetype'), url(../fonts/EuclidCircularBMedium.woff) format('woff'), url(../fonts/EuclidCircularBMedium.woff2) format('woff2');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid';
+    src: url(../fonts/EuclidCircularBSemiBold.eot);
+    src: url(../fonts/EuclidCircularBSemiBoldd41d.eot?#iefix) format('embedded-opentype'), url(../fonts/EuclidCircularBSemiBold.woff2) format('woff2'), url(../fonts/EuclidCircularBSemiBold.woff) format('woff'), url(../fonts/EuclidCircularBSemiBold.ttf) format('truetype'), url(../fonts/EuclidCircularBSemiBold.otf) format('otf');
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+}
