@@ -178,7 +178,9 @@
                 text-align: center
             }
         </style>
-<div id="popupMessage" style="background-color: #1d4ed8; color: white; padding: 20px 40px; border-radius: 8px; font-size: 18px; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); opacity: 0; position: absolute; transition: opacity 0.5s ease;">Ücretsiz sosyal medya hizmetlerinden faydalanmak için kodunuzu girin ve anında işlem yapın! <span style="display: inline-block; transform: translateY(2px);">➡️</span></div>
+    <div id="popupMessage" style="background-color: rgb(29, 78, 216); color: white; padding: 20px 40px; border-radius: 8px; font-size: 18px; text-align: center; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px; opacity: 0; position: absolute; transition: opacity 0.5s; z-index: 9999;">
+        Ücretsiz sosyal medya hizmetlerinden faydalanmak için kodunuzu girin ve anında işlem yapın! <span style="display: inline-block; transform: translateY(2px);">➡️</span></div>
+
 
         <!-- Ticker -->
         <section id="ticker">
@@ -1040,7 +1042,7 @@
 
 
 
-</body><head><script>
+<script>
   // Mesajı 8 saniye boyunca gösteren fonksiyon
   function showPopupMessage() {
     const popupMessage = document.getElementById('popupMessage');
@@ -1054,4 +1056,5 @@
 
   // Sayfa yüklendiğinde mesajı göster
   window.onload = showPopupMessage;
-</script></head></html>
+</script>
+</body></html>
