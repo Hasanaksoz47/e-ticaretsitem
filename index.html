@@ -1044,78 +1044,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-         function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'tr', autoDisplay: false}, 'google_translate_element');
-    }
-
-    function translatePage() {
-        var selectElement = document.querySelector(".goog-te-combo");
-        if (selectElement) {
-            selectElement.value = "en";
-            selectElement.dispatchEvent(new Event("change"));
-        }
-    }
-
-    // Sayfa yüklendiğinde otomatik çeviri yap
-    window.onload = function() {
-        setTimeout(translatePage, 2000); // 2 saniye bekleyerek çeviriyi başlat
-    };
-
         
 </script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body></html>
