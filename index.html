@@ -1036,7 +1036,6 @@
     if (typeof WOW === 'function') {
     new WOW().init();
     }
-</script>
 
 
 
@@ -1050,41 +1049,73 @@
 
 
 
-<script>
-  // Mesajı 8 saniye boyunca gösteren fonksiyon
-  function showPopupMessage() {
-    const popupMessage = document.getElementById('popupMessage');
-    popupMessage.style.opacity = "1";
-
-    // 8 saniye sonra mesajı gizle
-    setTimeout(() => {
-      popupMessage.style.opacity = "0";
-    }, 8000);
-  }
-
-  // Sayfa yüklendiğinde mesajı göster
-  window.onload = showPopupMessage;
 
 
 
 
-<div id="google_translate_element"></div>
-<script>
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'tr', includedLanguages: 'en', autoDisplay: true}, 'google_translate_element');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'tr', autoDisplay: false}, 'google_translate_element');
     }
+
+    function translatePage() {
+        var selectElement = document.querySelector(".goog-te-combo");
+        if (selectElement) {
+            selectElement.value = "en";
+            selectElement.dispatchEvent(new Event("change"));
+        }
+    }
+
+    // Sayfa yüklendiğinde otomatik çeviri yap
+    window.onload = function() {
+        setTimeout(translatePage, 2000); // 2 saniye bekleyerek çeviriyi başlat
+    };
+
+        
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-
-
-
-
-    
-
-</script>
-
-
-
 
 </body></html>
