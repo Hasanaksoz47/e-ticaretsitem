@@ -1064,6 +1064,35 @@
 
   // Sayfa yüklendiğinde mesajı göster
   window.onload = showPopupMessage;
+
+
+
+    // Google Translate kullanarak sayfanın tamamını İngilizceye çevirme
+(function translatePage() {
+    var script = document.createElement('script');
+    script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateInit";
+    document.head.appendChild(script);
+
+    window.googleTranslateInit = function() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'auto',
+            includedLanguages: 'en',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    };
+
+    // Sayfa başlığını da İngilizceye çevirmek için küçük bir gecikme ekleyelim
+    setTimeout(() => {
+        fetch(`https://api.mymemory.translated.net/get?q=${document.title}&langpair=auto|en`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.responseData && data.responseData.translatedText) {
+                    document.title = data.responseData.translatedText;
+                }
+            });
+    }, 3000);
+})();
+
 </script>
 
 
