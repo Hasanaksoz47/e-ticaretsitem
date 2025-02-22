@@ -1066,53 +1066,25 @@
   window.onload = showPopupMessage;
 
 
-// Google Translate kullanarak belirli bir web sitesinin tüm metinlerini İngilizceye çevirme
-(function translatePage() {
-    var script = document.createElement('script');
-    script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateInit";
-    document.head.appendChild(script);
 
-    window.googleTranslateInit = function() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'auto',
-            includedLanguages: 'en',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element');
-    };
 
-    // Sayfa başlığını da İngilizceye çevirmek için API kullanımı
-    setTimeout(() => {
-        fetch(`https://api.mymemory.translated.net/get?q=${document.title}&langpair=auto|en`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.responseData && data.responseData.translatedText) {
-                    document.title = data.responseData.translatedText;
-                }
-            });
-    }, 3000);
 
-    // Sayfa içindeki tüm metinleri çevirme
-    function translateTextNodes() {
-        let elements = document.querySelectorAll('body *:not(script):not(style)');
-        elements.forEach(element => {
-            if (element.childNodes.length === 1 && element.childNodes[0].nodeType === 3) {
-                let text = element.innerText.trim();
-                if (text.length > 0) {
-                    fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=auto|en`)
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.responseData && data.responseData.translatedText) {
-                                element.innerText = data.responseData.translatedText;
-                            }
-                        });
-                }
-            }
-        });
-    }
 
-    setTimeout(translateTextNodes, 4000);
-})();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 </script>
 
